@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .stars{
+      direction: rtl;
+      display: flex;
+      justify-content: center;
+    }
+    button:hover,
+    .star1:hover ~ .star,
+    .star2:hover ~ .star,
+    .star3:hover ~ .star,
+    .star4:hover ~ .star,
+    .clicked,
+    .clicked ~ .star
+    {
+      color: red;
+    }
+    /* .star1:hover ~ .star{
+      color: red;
+    }
+    .star2:hover ~ .star{
+      color: red;
+    }
+    .star3:hover ~ .star{
+      color: red;
+    }
+    .star4:hover ~ .star{
+      color: red;
+    }
+    .clicked{
+      color:red
+    }
+    .clicked ~ .star{
+      color:red
+    } */
+  </style>
+</head>
+<body>
+  <div class="stars">
+  <button class="star star1" onclick="setColor(this)">1</button>
+  <button class="star star2" onclick="setColor(this)">2</button>
+  <button class="star star3" onclick="setColor(this)">3</button>
+  <button class="star star4" onclick="setColor(this)">4</button>
+  <button class="star star5" onclick="setColor(this)">5</button>
+</div>
+<script>
+function setColor(a)
+{
+let all=document.getElementsByClassName("star")
+for(i=0;i<5;i++)
+{
+  all[i].classList.remove("clicked")
+}
+  a.classList.add("clicked")
+}
+</script>
+</body>
+</html>
